@@ -9,10 +9,11 @@ class functor {
 public:
     functor() :sum{ 0 }, count{ 0 } {};
     void operator()(std::vector<int> vec) {
-        for (auto x : vec) {
-            sum += x;
+        for (auto &x : vec) {
+            
             if (x % 3 == 0) {
                 count++;
+                sum += x;
             }
         }
     }
